@@ -1,23 +1,22 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Canva from './Canva'
+import NavBar from './NavBar'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>Konva React experiment</h1>
-      <Canva />
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <NavBar />
+      <div className='content'>
+
+        <Canva />
+        <div className="card">
+          <button onClick={() => setCount((count) => count + 1)}>
+            count is {count}
+          </button>
+        </div>
       </div>
     </>
   )
