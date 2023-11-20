@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import Canva from './Canva'
 import NavBar from './NavBar'
+import { Outlet } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,7 +11,7 @@ function App() {
       <NavBar />
       <div className='content'>
 
-        <Canva />
+        <Outlet />
         <div className="card">
           <button onClick={() => setCount((count) => count + 1)}>
             count is {count}

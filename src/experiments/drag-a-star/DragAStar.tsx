@@ -1,12 +1,12 @@
 import React from 'react';
-import { Stage, Layer, Star, Text, Image } from 'react-konva';
-import { File } from './models/file';
+import { Stage, Layer, Star, Image } from 'react-konva';
+import { File } from '../../models/file';
 import useImage from 'use-image';
-import fileImgUrl from './assets/file.png';
+import fileImgUrl from '../../assets/file.png';
 
 function generateShapes() {
   return [...Array(10)].map((_, i) => ({
-    id: i.toString(),
+    id: 'target-' + i.toString(),
     x: Math.random() * window.innerWidth,
     y: Math.random() * window.innerHeight,
     rotation: Math.random() * 180,
@@ -16,11 +16,45 @@ function generateShapes() {
 
 const INITIAL_STATE = generateShapes();
 
+function generateConnectors() {
+  const number = 10;
+  const result = [];
+  while (result.length < number) {
+    const from = 'target-' + Math.floor(Math.random() * INITIAL_STATE.length);
+    const to = 'target-' + Math.floor(Math.random() * INITIAL_STATE.length);
+    if(from == to) {
+      continue;
+    }
+    result.push({
+      id: 'connector-' + result.length,
+      from,
+      to
+    })
+  }
+  return result;
+}
+
+function getConnectorPoints(from, to) {
+  const dx = to.x -from.x;
+  const dy = to.y - from.y;
+  let angle = Math.atan2(-dy, dx);
+
+  const radius = 50;
+  return [
+    from.x + -radius*Math.cos(angle + Math.PI),
+    from.y + radius*Math.sin(angle+Math.PI),
+    to.x+ -radius * Math.cos(angle),
+    to.y+ radius* Math.sin(angle)
+  ]
+}
+
+const connectors = generateConnectors();
+
 const file : File = {
   name: 'index.js'
 }
 
-const Canva = () => {
+const DragAStar = () => {
   const [stars, setStars] = React.useState(INITIAL_STATE);
 
   const handleDragStart = (e) => {
@@ -48,9 +82,9 @@ const Canva = () => {
   const [image] = useImage(fileImgUrl)
 
   return (
-    <Stage width={window.innerWidth - 15} height={window.innerHeight}>
+    <Stage width={window.innerWidth - 250} height={window.innerHeight}>
       <Layer>
-        <Text text="Try to drag a star" />
+        {/* <Text text="Try to drag a star" /> */}
         {stars.map((star) => (
           <Star
             key={star.id}
@@ -86,4 +120,4 @@ const Canva = () => {
   );
 };
 
-export default Canva;
+export default DragAStar;
