@@ -84,7 +84,6 @@ const DragAStar = () => {
   return (
     <Stage width={window.innerWidth - 250} height={window.innerHeight}>
       <Layer>
-        {/* <Text text="Try to drag a star" /> */}
         {stars.map((star) => (
           <Star
             key={star.id}
