@@ -1,16 +1,23 @@
-import { useState } from 'react'
-import './App.css'
+import './App.scss'
 import NavBar from './NavBar'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
+import logoUrl from './assets/Konva-react_demos.png';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const location = useLocation();
 
   return (
     <>
       <NavBar />
       <div className='content'>
-
+        { location.pathname == '/' &&
+          <div className='card'>
+            <img src={logoUrl} className='logo-img' />
+            <div>
+              <button className='btn'>Press Enter</button>
+            </div>
+          </div>
+        }
         <Outlet />
       </div>
     </>

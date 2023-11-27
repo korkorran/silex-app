@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./NavBar.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCirclePlay, faGears, faChevronLeft, faBars, faStar } from '@fortawesome/free-solid-svg-icons'
+import { faCirclePlay, faGears, faChevronLeft, faBars, faStar, faPaste } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
 
 function NavBar() {
@@ -13,7 +13,7 @@ function NavBar() {
             <div className="nav-header">
                 { toggled &&
                 <div className="nav-title" onClick={() => navigate("/")}>
-                    NOTEBOARD
+                    K-R Demos
                 </div>}
                 <label htmlFor="nav-toggle" onClick={() => setToggled((toggled)=> !toggled)}>
                     { toggled ? 
@@ -33,8 +33,8 @@ function NavBar() {
                     { toggled && <span>Wheel of Fortune</span> }
                 </div>
                 <div className="nav-button">
-                    <FontAwesomeIcon icon={faGears} />
-                    { toggled && <span>Models</span>}
+                    <FontAwesomeIcon icon={faPaste} />
+                    { toggled && <span>Text</span>}
                 </div>
                 <div id="nav-content-highlight"></div>
             </div>
