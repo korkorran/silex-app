@@ -32,9 +32,9 @@ function NavBar() {
                     <FontAwesomeIcon icon={faCirclePlay} />
                     { toggled && <span>Wheel of Fortune</span> }
                 </div>
-                <div className="nav-button">
+                <div className="nav-button" onClick={() => navigate("post-it")}>
                     <FontAwesomeIcon icon={faPaste} />
-                    { toggled && <span>Text</span>}
+                    { toggled && <span>Post-It</span>}
                 </div>
                 <div id="nav-content-highlight"></div>
             </div>

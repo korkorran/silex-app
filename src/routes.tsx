@@ -1,5 +1,5 @@
 import App from "./App";
-import DragAStar from "./experiments/drag-a-star/DragAStar";
+import DragAStar from "./demos/drag-a-star/DragAStar";
 import ErrorPage from "./router-error-page";
 
 const routes = [

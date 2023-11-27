@@ -7,8 +7,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ErrorPage from './router-error-page.tsx';
-import DragAStar from './experiments/drag-a-star/DragAStar.tsx';
-import WheelOfFortune from './experiments/wheel-of-fortune/WheelOfFortune.tsx';
+import DragAStar from './demos/drag-a-star/DragAStar.tsx';
+import WheelOfFortune from './demos/wheel-of-fortune/WheelOfFortune.tsx';
+import PostItBoard from './demos/post-it/PostItBoard.tsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       { 
         path: "wheel-of-fortune",
         element: <WheelOfFortune />
+      },
+      {
+        path: 'post-it',
+        element: <PostItBoard />
       }
     ]
   },
