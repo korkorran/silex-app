@@ -55,7 +55,7 @@ Konva.angleDeg = false;
 
 const WheelOfFortune = () => {
 
-    const width = window.innerWidth - 250;
+    const width = window.innerWidth - 260;
     const height = window.innerHeight;
     const wheelRef = useRef<GroupType>(null);
     const layerRef = useRef(null);
@@ -181,14 +181,14 @@ const WheelOfFortune = () => {
 
   return (
     <>
-    <div className="card">
+{/*     <div className="card">
         <button onClick={() => setWheelRun(wr => wr+1)}>
         Turn Wheel
         </button>
-    </div>
+    </div> */}
     <Stage 
         width={width} 
-        height={height} 
+        height={height-100} 
         ref={stageRef}
 /*         onMouseUp={onMouseUpStage}
         onTouchEnd={onMouseUpStage}

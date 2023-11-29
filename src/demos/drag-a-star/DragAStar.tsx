@@ -82,7 +82,7 @@ const DragAStar = () => {
   const [image] = useImage(fileImgUrl)
 
   return (
-    <Stage width={window.innerWidth - 250} height={window.innerHeight}>
+    <Stage width={window.innerWidth - 260} height={window.innerHeight}>
       <Layer>
         {stars.map((star) => (
           <Star

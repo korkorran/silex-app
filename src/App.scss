@@ -5,6 +5,7 @@
   margin: 0 0;
   padding: 0rem;
   text-align: center;
+  width: 100%;
 }
 
 .logo {
@@ -54,7 +55,7 @@
 
 .content {
   margin-left: 16rem;
-  width: 100%;
+  width: calc(100% - 18rem);
 }
 
 
