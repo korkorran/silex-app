@@ -1,6 +1,5 @@
 import React from 'react';
 import { Stage, Layer, Star, Image } from 'react-konva';
-import { File } from '../../models/file';
 import useImage from 'use-image';
 import fileImgUrl from '../../assets/file.png';
 
@@ -16,48 +15,11 @@ function generateShapes() {
 
 const INITIAL_STATE = generateShapes();
 
-function generateConnectors() {
-  const number = 10;
-  const result = [];
-  while (result.length < number) {
-    const from = 'target-' + Math.floor(Math.random() * INITIAL_STATE.length);
-    const to = 'target-' + Math.floor(Math.random() * INITIAL_STATE.length);
-    if(from == to) {
-      continue;
-    }
-    result.push({
-      id: 'connector-' + result.length,
-      from,
-      to
-    })
-  }
-  return result;
-}
-
-function getConnectorPoints(from, to) {
-  const dx = to.x -from.x;
-  const dy = to.y - from.y;
-  let angle = Math.atan2(-dy, dx);
-
-  const radius = 50;
-  return [
-    from.x + -radius*Math.cos(angle + Math.PI),
-    from.y + radius*Math.sin(angle+Math.PI),
-    to.x+ -radius * Math.cos(angle),
-    to.y+ radius* Math.sin(angle)
-  ]
-}
-
-const connectors = generateConnectors();
-
-const file : File = {
-  name: 'index.js'
-}
 
 const DragAStar = () => {
   const [stars, setStars] = React.useState(INITIAL_STATE);
 
-  const handleDragStart = (e) => {
+  const handleDragStart = (e: any) => {
     const id = e.target.id();
     setStars(
       stars.map((star) => {
@@ -68,7 +30,7 @@ const DragAStar = () => {
       })
     );
   };
-  const handleDragEnd = (e) => {
+  const handleDragEnd = (_: any) => {
     setStars(
       stars.map((star) => {
         return {

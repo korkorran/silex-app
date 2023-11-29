@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {Group, Text, Wedge } from 'react-konva';
 
-function purifyColor(color) {
+function purifyColor(color: any) {
     var randIndex = Math.round(Math.random() * 3);
     color[randIndex] = 0;
     return color;

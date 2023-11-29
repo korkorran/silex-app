@@ -28,13 +28,13 @@ const initialRectangles = [
 
 const PostItBoard = () => {
   const [rectangles, setRectangles] = useState(initialRectangles);
-  const [selectedId, selectShape] = useState<string>(null);
+  const [selectedId, selectShape] = useState<string>();
 
-  const checkDeselect = (e) => {
+  const checkDeselect = (e: any) => {
     // deselect when clicked on empty area
     const clickedOnEmpty = e.target === e.target.getStage();
     if (clickedOnEmpty) {
-      selectShape(null);
+      selectShape(undefined);
     }
   };
 
@@ -55,7 +55,7 @@ const PostItBoard = () => {
               onSelect={() => {
                 selectShape(rect.id);
               }}
-              onChange={(newAttrs) => {
+              onChange={(newAttrs: any) => {
                 const rects = rectangles.slice();
                 rects[i] = newAttrs;
                 setRectangles(rects);

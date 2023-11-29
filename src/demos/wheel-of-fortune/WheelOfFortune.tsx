@@ -1,8 +1,12 @@
-import { Stage, Layer, Group, Text, Wedge } from 'react-konva';
+import { Stage, Layer, Group, Wedge } from 'react-konva';
 import Konva from 'konva';
 import { useEffect, useRef, useState } from 'react';
 import { Group as GroupType } from 'konva/lib/Group';
 import WheelWedge from './WheelWedge';
+import { Layer as LayerType } from 'konva/lib/Layer';
+import { Wedge as WedgeType } from 'konva/lib/shapes/Wedge';
+import { Stage as StageType } from 'konva/lib/Stage';
+import { Shape as ShapeType } from 'konva/lib/Shape';
 
 Konva.angleDeg = false;
 
@@ -58,13 +62,13 @@ const WheelOfFortune = () => {
     const width = window.innerWidth - 260;
     const height = window.innerHeight;
     const wheelRef = useRef<GroupType>(null);
-    const layerRef = useRef(null);
-    const pointerRef = useRef(null);
-    const stageRef = useRef(null);
-    const activeWedgeRef = useRef(null);
+    const layerRef = useRef<LayerType>(null);
+    const pointerRef = useRef<WedgeType>(null);
+    const stageRef = useRef<StageType>(null);
+    const activeWedgeRef = useRef<ShapeType | null>(null);
 
     const angularVelocity = useRef(1);
-    const angularVelocities = useRef< number[]>([]);
+/*     const angularVelocities = useRef< number[]>([]); */
     const lastRotation = useRef(0);
     const numWedges = 25;
     const angularFriction = 0.4;
@@ -118,7 +122,7 @@ const WheelOfFortune = () => {
     } */
 
 
-    function animate(frame) {
+    function animate(frame: any) {
         // handle wheel spin
         const angularVelocityChange =
             (angularVelocity.current * frame.timeDiff * (1 - angularFriction)) / 1000;
@@ -135,7 +139,7 @@ const WheelOfFortune = () => {
         wheelRef.current!.rotate(diff);
         } else if (!finished.current) {
             if (shape) {
-                const text = shape.getParent().findOne('Text').text();
+                const text = (shape.getParent()!.findOne('Text')! as any).text();
                 const price = text.split('\n').join('');
                 alert('Your price is ' + price);
             }
@@ -166,7 +170,7 @@ const WheelOfFortune = () => {
         console.log(wheelRun);
     }
 
-    const [wheelRun, setWheelRun] = useState(0);
+    const [wheelRun] = useState(0);
 
   useEffect(() => {
     /* var period = 300; */

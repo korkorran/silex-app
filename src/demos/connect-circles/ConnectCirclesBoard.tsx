@@ -1,4 +1,6 @@
+import { Layer as LayerType } from 'konva/lib/Layer';
 import { Util } from 'konva/lib/Util';
+import { Arrow as ArrowType } from 'konva/lib/shapes/Arrow';
 import { useEffect, useRef, useState } from 'react';
 import { Stage, Layer,Circle, Arrow} from 'react-konva';
 
@@ -32,7 +34,7 @@ function generateConnectors() {
   return result;
 }
 
-function getConnectorPoints(from, to) {
+function getConnectorPoints(from: any, to: any) {
   const dx = to.x -from.x;
   const dy = to.y - from.y;
   let angle = Math.atan2(-dy, dx);
@@ -52,20 +54,20 @@ const INITIAL_CONNECTORS = generateConnectors();
 const ConnectCirclesBoard = () => {
   const [circles] = useState(INITIAL_CIRCLES);
   const [connectors] = useState(INITIAL_CONNECTORS)
-  const layerRef = useRef();
+  const layerRef = useRef<LayerType | null>(null);
 
 
   function updateObjects() {
     connectors.forEach((connect) => {
-      const line = layerRef.current.findOne('#' + connect.id);
-      const fromNode = layerRef.current.findOne('#' + connect.from);
-      const toNode = layerRef.current.findOne('#' + connect.to);
+      const line = layerRef.current!.findOne<ArrowType>('#' + connect.id);
+      const fromNode = layerRef.current!.findOne('#' + connect.from);
+      const toNode = layerRef.current!.findOne('#' + connect.to);
 
       const points = getConnectorPoints(
-        fromNode.position(),
-        toNode.position()
+        fromNode!.position(),
+        toNode!.position()
       );
-      line.points(points);
+      line!.points(points);
     });
 
   }
