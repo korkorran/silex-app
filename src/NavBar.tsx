@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "./NavBar.scss"
-import { FaStar, FaChevronLeft, FaBars, FaCircle, FaPaste } from 'react-icons/fa';
+import { FaStar, FaChevronLeft, FaBars, FaPaste } from 'react-icons/fa';
+import { SlLink } from "react-icons/sl";
+import { RxColorWheel } from "react-icons/rx";
+
 
 import { useNavigate } from "react-router-dom";
 
@@ -26,12 +29,16 @@ function NavBar() {
                     { toggled && <span>Drag a Star</span> }
                 </div>
                 <div className="nav-button" onClick={() => navigate("wheel-of-fortune")}>
-                    <FaCircle />
+                    <RxColorWheel />
                     { toggled && <span>Wheel of Fortune</span> }
                 </div>
                 <div className="nav-button" onClick={() => navigate("post-it")}>
                     <FaPaste />
                     { toggled && <span>Post-It</span>}
+                </div>
+                <div className="nav-button" onClick={() => navigate("connect-circles")}>
+                    <SlLink />
+                    { toggled && <span>Connect Circles</span>}
                 </div>
                 <div id="nav-content-highlight"></div>
             </div>

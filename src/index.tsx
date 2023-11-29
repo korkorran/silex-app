@@ -10,6 +10,7 @@ import ErrorPage from './router-error-page.tsx';
 import DragAStar from './demos/drag-a-star/DragAStar.tsx';
 import WheelOfFortune from './demos/wheel-of-fortune/WheelOfFortune.tsx';
 import PostItBoard from './demos/post-it/PostItBoard.tsx';
+import ConnectCirclesBoard from './demos/connect-circles/ConnectCirclesBoard.tsx';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: 'post-it',
         element: <PostItBoard />
+      },
+      {
+        path: 'connect-circles',
+        element: <ConnectCirclesBoard />
       }
     ]
   },
