@@ -1,4 +1,6 @@
-![Konva-React Demos](src/assets/Konva-react_demos.png)
+<p align="center">
+  <img width="500" height="300" style="object-fit: cover;" src="src/assets/Konva-react_demos.png">
+</p>
 
 A vite app with multiple Canvas Board showcasing Konva with React, written in typescript. The app intent is to get familiarized with Konva-react.
 
