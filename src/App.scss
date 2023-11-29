@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=VT323);
 
 #root {
-  max-width: 1280px;
   margin: 0 0;
   padding: 0rem;
   text-align: center;
@@ -49,13 +48,42 @@
   }
 }
 
-.read-the-docs {
-  color: #888;
+.content {
+  margin-left: 17rem;
+  width: calc(100% - 18rem);
 }
 
-.content {
-  margin-left: 16rem;
-  width: calc(100% - 18rem);
+.grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 20px;
+	padding: 4rem;
+	padding-top: 2rem;
+	font-family: 'VT323', monospace ;
+	font-size: 24px;
+
+	h1 {
+		font-size: 3rem;
+		color: rgb(61, 61, 61);
+	}
+
+	.card {
+		background-color: azure;
+		border-radius: 20px;
+		
+		margin: 1rem;
+		padding: 0.5rem;
+		cursor: pointer;
+
+		img {
+			width: 80%;
+			border-radius: 10px;
+		}
+	}
+
+	.large {
+		grid-column: 1/3;
+	}
 }
 
 

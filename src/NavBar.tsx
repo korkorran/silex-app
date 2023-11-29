@@ -3,8 +3,6 @@ import "./NavBar.scss"
 import { FaStar, FaChevronLeft, FaBars, FaPaste } from 'react-icons/fa';
 import { SlLink } from "react-icons/sl";
 import { RxColorWheel } from "react-icons/rx";
-
-
 import { useNavigate } from "react-router-dom";
 
 function NavBar() {

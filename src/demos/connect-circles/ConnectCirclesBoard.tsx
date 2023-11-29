@@ -7,7 +7,7 @@ import { Stage, Layer,Circle, Arrow} from 'react-konva';
 function generateTargets() {
   return [...Array(10)].map((_, i) => ({
     id: 'target-' + i.toString(),
-    x: Math.random() * (window.innerWidth-260),
+    x: Math.random() * (window.innerWidth-280),
     y: Math.random() * window.innerHeight,
     color: Util.getRandomColor(),
     radius: 20 + (Math.random() * 20)
@@ -75,7 +75,7 @@ const ConnectCirclesBoard = () => {
   useEffect(()=> { updateObjects()}, [])
 
   return (
-    <Stage width={window.innerWidth - 260} height={window.innerHeight}>
+    <Stage width={window.innerWidth - 280} height={window.innerHeight}>
       <Layer ref={layerRef}>
         {circles.map((circle) => (
           <Circle

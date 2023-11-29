@@ -1,12 +1,12 @@
 import React from 'react';
-import { Stage, Layer, Star, Image } from 'react-konva';
-import useImage from 'use-image';
-import fileImgUrl from '../../assets/file.png';
+import { Stage, Layer, Star} from 'react-konva';
+/* import useImage from 'use-image'; 
+import fileImgUrl from '../../assets/file.png'; */
 
 function generateShapes() {
   return [...Array(10)].map((_, i) => ({
     id: 'target-' + i.toString(),
-    x: Math.random() * window.innerWidth,
+    x: Math.random() * (window.innerWidth - 280),
     y: Math.random() * window.innerHeight,
     rotation: Math.random() * 180,
     isDragging: false,
@@ -40,11 +40,11 @@ const DragAStar = () => {
       })
     );
   };
-
-  const [image] = useImage(fileImgUrl)
+  
+/* const [image] = useImage(fileImgUrl) */
 
   return (
-    <Stage width={window.innerWidth - 260} height={window.innerHeight}>
+    <Stage width={window.innerWidth - 280} height={window.innerHeight}>
       <Layer>
         {stars.map((star) => (
           <Star
@@ -70,12 +70,12 @@ const DragAStar = () => {
             onDragEnd={handleDragEnd}
           />
         ))}
-        <Image
+{/*         <Image
           image={image}
           x={100}
           y={100}
           draggable
-          />
+          /> */}
       </Layer>
     </Stage>
   );

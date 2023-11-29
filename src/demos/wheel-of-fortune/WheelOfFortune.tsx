@@ -59,7 +59,7 @@ Konva.angleDeg = false;
 
 const WheelOfFortune = () => {
 
-    const width = window.innerWidth - 260;
+    const width = window.innerWidth - 280;
     const height = window.innerHeight;
     const wheelRef = useRef<GroupType>(null);
     const layerRef = useRef<LayerType>(null);
