@@ -128,7 +128,7 @@
   }
 }
 
-#nav-content-highlight {
+#nav-content-highlight, #nav-content-active {
   position: absolute;
   left: 16px;
   top: -54 - 16px;
@@ -182,6 +182,14 @@
       color: var(--navbar-dark-primary);
 
       & ~ #nav-content-highlight {
+        top: ($i - 1) * 54 + 16px;
+      }
+    }
+
+    &:nth-of-type(#{$i}).active {
+      color: var(--navbar-dark-primary);
+
+      & ~ #nav-content-active {
         top: ($i - 1) * 54 + 16px;
       }
     }
