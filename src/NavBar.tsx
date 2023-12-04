@@ -9,6 +9,14 @@ function NavBar() {
     const [toggled, setToggled] = useState(true);
     const navigate = useNavigate();
     const {pathname} = useLocation()
+
+    const toggle = () => {
+        if(toggled) {
+            setToggled(false);
+        } else {
+            setTimeout(() => setToggled(true), 200)
+        }
+    }
     return (
         <div className="nav-bar">
             <input id="nav-toggle" type="checkbox" />
@@ -19,7 +27,7 @@ function NavBar() {
                     Konva-React <br/>
                     <span className="highlight"> Demos</span>
                 </div>}
-                <label htmlFor="nav-toggle" onClick={() => setToggled((toggled)=> !toggled)}>
+                <label htmlFor="nav-toggle" onClick={toggle}>
                     { toggled ? <FaChevronLeft /> : <FaBars />}
                 </label>
             </div>

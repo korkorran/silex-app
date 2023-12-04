@@ -8,6 +8,7 @@ import postItUrl from './assets/screenshot-post-it.png';
 import connectCirclesUrl from './assets/screenshot-connect-circles.png';
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import { FaGithub } from "react-icons/fa";
 
 function App() {
   const location = useLocation();
@@ -23,6 +24,11 @@ function App() {
         { location.pathname == '/' && !hasPressEnter &&
           <div className='card'>
             <img src={logoUrl} className='logo-img' />
+            <div>
+              <a href='https://github.com/frederic-lang/awesome-konva-react-demos' target='_blank'>
+                <FaGithub />
+              </a>
+            </div>
             <div>
               <button className='btn' onClick={()=>setHasPressEnter(true)}>Press Enter</button>
             </div>
