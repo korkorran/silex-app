@@ -86,7 +86,12 @@
     transition: opacity 1s;
     cursor: pointer;
     font-family: 'Bungee', 'Courier New', Courier, monospace;
-    color: #5AF;
+    color: #7843e6;
+    padding-right: 2.5rem;
+
+    .highlight {
+      color: #38b6ff;
+    }
   }
 
   label[for="nav-toggle"] {
