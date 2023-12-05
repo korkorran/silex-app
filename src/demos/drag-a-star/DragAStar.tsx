@@ -1,6 +1,8 @@
 import React from 'react';
 import { Stage, Layer, Star} from 'react-konva';
 import { FaGithub } from "react-icons/fa";
+import { DiscussionEmbed } from 'disqus-react';
+import { disqusSortname } from '../../constant';
 /* import useImage from 'use-image'; 
 import fileImgUrl from '../../assets/file.png'; */
 
@@ -42,7 +44,12 @@ const DragAStar = () => {
     );
   };
   
-/* const [image] = useImage(fileImgUrl) */
+  /* const [image] = useImage(fileImgUrl) */
+  const disqusConfig = {
+    url: "http://localhost:5173",
+    identifier: "drag-a-star",
+    title: "Drag a Star"
+  }
 
   return (
     <>
@@ -81,6 +88,10 @@ const DragAStar = () => {
       </Layer>
     </Stage>
     <p><b>Instructions : </b> Drag a star and see dragging effect. <a href='https://github.com/frederic-lang/awesome-konva-react-demos/blob/master/src/demos/drag-a-star/DragAStar.tsx' target='_blank'><FaGithub /></a></p>
+    <DiscussionEmbed
+      shortname={disqusSortname}
+      config={disqusConfig}
+      />
     </>
   );
 };

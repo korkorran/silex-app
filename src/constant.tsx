@@ -39,4 +39,6 @@ export const demosDetails = [
       icon: <SlLink />,
       screenshotUrl: connectCirclesUrl
     }
-  ]
+];
+
+export const disqusSortname = 'awesome-konva-react-demos';
