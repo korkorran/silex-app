@@ -7,6 +7,7 @@ import { Layer as LayerType } from 'konva/lib/Layer';
 import { Wedge as WedgeType } from 'konva/lib/shapes/Wedge';
 import { Stage as StageType } from 'konva/lib/Stage';
 import { Shape as ShapeType } from 'konva/lib/Shape';
+import { FaGithub } from 'react-icons/fa';
 
 Konva.angleDeg = false;
 
@@ -236,6 +237,7 @@ const WheelOfFortune = () => {
         />
       </Layer>
     </Stage>
+    <p><b>Instructions : </b> Let the wheel turn and wait for its stop. <a href='https://github.com/frederic-lang/awesome-konva-react-demos/tree/master/src/demos/wheel-of-fortune' target='_blank'><FaGithub /></a></p>
     </>
   );
 };

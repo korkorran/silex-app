@@ -1,9 +1,8 @@
 import { useState } from "react";
 import "./NavBar.scss"
-import { FaStar, FaChevronLeft, FaBars, FaPaste } from 'react-icons/fa';
-import { SlLink } from "react-icons/sl";
-import { RxColorWheel } from "react-icons/rx";
+import { FaChevronLeft, FaBars } from 'react-icons/fa';
 import { useLocation, useNavigate } from "react-router-dom";
+import { demosDetails } from "./constant";
 
 function NavBar() {
     const [toggled, setToggled] = useState(true);
@@ -33,30 +32,14 @@ function NavBar() {
             </div>
             <hr/>
             <div className="nav-content">
-                <div 
-                  className={"nav-button"+ (pathname === '/drag-a-star' ? ' active' : '') } 
-                  onClick={() => navigate("drag-a-star")}>
-                    <FaStar />
-                    { toggled && <span>Drag a Star</span> }
-                </div>
-                <div 
-                  className={"nav-button"+ (pathname === '/wheel-of-fortune' ? ' active' : '') } 
-                  onClick={() => navigate("wheel-of-fortune")}>
-                    <RxColorWheel />
-                    { toggled && <span>Wheel of Fortune</span> }
-                </div>
-                <div 
-                  className={"nav-button"+ (pathname === '/post-it' ? ' active' : '') }
-                  onClick={() => navigate("post-it")}>
-                    <FaPaste />
-                    { toggled && <span>Post-It</span>}
-                </div>
-                <div 
-                  className={"nav-button"+ (pathname === '/connect-circles' ? ' active' : '') } 
-                  onClick={() => navigate("connect-circles")}>
-                    <SlLink />
-                    { toggled && <span>Connect Circles</span>}
-                </div>
+                { demosDetails.map(d => (
+                    <div 
+                        className={"nav-button"+ (pathname === d.path ? ' active' : '') } 
+                        onClick={() => navigate(d.path)}>
+                        {d.icon}
+                        { toggled && <span>{d.title}</span> }
+                    </div>
+                ))}
                 <div id="nav-content-highlight"></div>
                 <div id="nav-content-active"></div>
             </div>

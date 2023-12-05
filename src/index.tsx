@@ -7,34 +7,14 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ErrorPage from './router-error-page.tsx';
-import DragAStar from './demos/drag-a-star/DragAStar.tsx';
-import WheelOfFortune from './demos/wheel-of-fortune/WheelOfFortune.tsx';
-import PostItBoard from './demos/post-it/PostItBoard.tsx';
-import ConnectCirclesBoard from './demos/connect-circles/ConnectCirclesBoard.tsx';
+import { demosDetails } from './constant.tsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "drag-a-star",
-        element: <DragAStar />
-      },
-      { 
-        path: "wheel-of-fortune",
-        element: <WheelOfFortune />
-      },
-      {
-        path: 'post-it',
-        element: <PostItBoard />
-      },
-      {
-        path: 'connect-circles',
-        element: <ConnectCirclesBoard />
-      }
-    ]
+    children: demosDetails.map(d => ({path: d.path, element: d.element}))
   },
 ]);
 

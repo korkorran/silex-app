@@ -2,13 +2,14 @@ import { Layer as LayerType } from 'konva/lib/Layer';
 import { Util } from 'konva/lib/Util';
 import { Arrow as ArrowType } from 'konva/lib/shapes/Arrow';
 import { useEffect, useRef, useState } from 'react';
+import { FaGithub } from 'react-icons/fa';
 import { Stage, Layer,Circle, Arrow} from 'react-konva';
 
 function generateTargets() {
   return [...Array(10)].map((_, i) => ({
     id: 'target-' + i.toString(),
     x: Math.random() * (window.innerWidth-280),
-    y: Math.random() * window.innerHeight,
+    y: Math.random() * (window.innerHeight - 100),
     color: Util.getRandomColor(),
     radius: 20 + (Math.random() * 20)
   }));
@@ -75,7 +76,8 @@ const ConnectCirclesBoard = () => {
   useEffect(()=> { updateObjects()}, [])
 
   return (
-    <Stage width={window.innerWidth - 280} height={window.innerHeight}>
+    <>
+    <Stage width={window.innerWidth - 280} height={window.innerHeight - 100}>
       <Layer ref={layerRef}>
         {circles.map((circle) => (
           <Circle
@@ -102,6 +104,8 @@ const ConnectCirclesBoard = () => {
         ))}
       </Layer>
     </Stage>
+    <p><b>Instructions : </b> Drag a circle and see connectors position update. <a href='https://github.com/frederic-lang/awesome-konva-react-demos/blob/master/src/demos/connect-circles/ConnectCirclesBoard.tsx' target='_blank'><FaGithub /></a></p>
+    </>
   );
 };
 

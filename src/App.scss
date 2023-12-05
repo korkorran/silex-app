@@ -55,7 +55,18 @@
   svg {
 	text-align: center;
 	font-size: 2rem;
-	padding-bottom: 2rem;
+  }
+
+  p {
+	text-align: start;
+	font-family: 'VT323', monospace ;
+	font-size: 24px;
+	margin-left: 2rem;
+
+	svg {
+		color: black;
+		font-size: 1.5rem;
+	}
   }
 }
 
@@ -76,10 +87,14 @@
 	.card {
 		background-color: azure;
 		border-radius: 20px;
-		
 		margin: 1rem;
 		padding: 0.5rem;
 		cursor: pointer;
+
+		p {
+			text-align: center;
+			margin-left: 0;
+		}
 
 		img {
 			width: 80%;
@@ -109,7 +124,7 @@
 	padding: .5rem;
 	text-transform: uppercase;
 	width: auto;
-  font-family: 'VT323', monospace ;
+  	font-family: 'VT323', monospace ;
 	font-size: 24px;
 	
 	&:focus,

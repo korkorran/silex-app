@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Stage, Layer } from 'react-konva';
 import PostIt from './PostIt';
+import { FaGithub } from 'react-icons/fa';
 
 
 
@@ -39,9 +40,10 @@ const PostItBoard = () => {
   };
 
   return (
+    <>
     <Stage
       width={window.innerWidth - 280}
-      height={window.innerHeight}
+      height={window.innerHeight - 100}
       onMouseDown={checkDeselect}
       onTouchStart={checkDeselect}
     >
@@ -65,6 +67,8 @@ const PostItBoard = () => {
         })}
       </Layer>
     </Stage>
+    <p><b>Instructions : </b> Click on post-it and resize/rotate shape. <a href='https://github.com/frederic-lang/awesome-konva-react-demos/tree/master/src/demos/post-it' target='_blank'><FaGithub /></a></p>
+    </>
   );
 };
 
