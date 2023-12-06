@@ -97,6 +97,7 @@ const ConnectCirclesBoard = () => {
         ))}
         {connectors.map(connector=> (
           <Arrow
+            key={connector.id}
             stroke='black'
             id={connector.id}
             fill='black'

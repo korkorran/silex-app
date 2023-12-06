@@ -8,6 +8,7 @@ import { Wedge as WedgeType } from 'konva/lib/shapes/Wedge';
 import { Stage as StageType } from 'konva/lib/Stage';
 import { Shape as ShapeType } from 'konva/lib/Shape';
 import { FaGithub } from 'react-icons/fa';
+import { IFrame } from 'konva/lib/types';
 
 Konva.angleDeg = false;
 
@@ -123,10 +124,10 @@ const WheelOfFortune = () => {
     } */
 
 
-    function animate(frame: any) {
+    function animate(frame?: IFrame) {
         // handle wheel spin
         const angularVelocityChange =
-            (angularVelocity.current * frame.timeDiff * (1 - angularFriction)) / 1000;
+            (angularVelocity.current * frame!.timeDiff * (1 - angularFriction)) / 1000;
         angularVelocity.current -= angularVelocityChange;
 
         // activate / deactivate wedges based on point intersection
@@ -135,7 +136,7 @@ const WheelOfFortune = () => {
             y: 100,
         });
 
-        const diff = (frame.timeDiff * angularVelocity.current) / 1000;
+        const diff = (frame!.timeDiff * angularVelocity.current) / 1000;
         if (diff > 0.0001) {
         wheelRef.current!.rotate(diff);
         } else if (!finished.current) {

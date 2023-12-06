@@ -5,10 +5,13 @@ import WheelOfFortune from "./demos/wheel-of-fortune/WheelOfFortune";
 import { FaPaste, FaStar } from "react-icons/fa";
 import { RxColorWheel } from "react-icons/rx";
 import { SlLink } from "react-icons/sl";
+import { GiSnakeTongue } from "react-icons/gi";
 import dragAStarUrl from './assets/screenshot-drag-a-star.png';
 import wheelOfFortuneUrl from './assets/screenshot-wheel-of-fortune.png';
 import postItUrl from './assets/screenshot-post-it.png';
 import connectCirclesUrl from './assets/screenshot-connect-circles.png';
+import snakeUrl from './assets/screenshot-snake.png';
+import SnakeGame from "./demos/snake/SnakeGame";
 
 export const demosDetails = [
     {
@@ -38,5 +41,12 @@ export const demosDetails = [
       title: 'Connect Circles',
       icon: <SlLink />,
       screenshotUrl: connectCirclesUrl
+    },
+    {
+      path: '/demos/snake',
+      element: <SnakeGame />,
+      title: 'Snake',
+      icon: <GiSnakeTongue />,
+      screenshotUrl: snakeUrl
     }
   ]

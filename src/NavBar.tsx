@@ -34,6 +34,7 @@ function NavBar() {
             <div className="nav-content">
                 { demosDetails.map(d => (
                     <div 
+                        key={d.path}
                         className={"nav-button"+ (pathname === d.path ? ' active' : '') } 
                         onClick={() => navigate(d.path)}>
                         {d.icon}

@@ -37,7 +37,7 @@ function App() {
               <h1>Demos</h1>
             </div>
             {demosDetails.map(d => (
-              <div className='card' onClick={() => navigate(d.path)}>
+              <div key={d.path} className='card' onClick={() => navigate(d.path)}>
                 <img src={d.screenshotUrl} className='logo-img' />
                 <p>{d.title}</p>
               </div>
