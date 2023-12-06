@@ -1,7 +1,7 @@
 import { Stage, Layer, Rect, Group} from 'react-konva';
 import { FaGithub } from "react-icons/fa";
 import { BLOCK_SIZE, CANVAS_HEIGHT, CANVAS_WIDTH, SNAKE_INITIAL_LENGTH } from './constant';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import Konva from 'konva';
 import { IFrame } from 'konva/lib/types';
 import { Rect as RectType } from 'konva/lib/shapes/Rect';
