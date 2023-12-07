@@ -1,7 +1,6 @@
 import React from 'react';
 import { Stage, Layer, Star} from 'react-konva';
 import { FaGithub } from "react-icons/fa";
-import Giscus from '@giscus/react';
 /* import useImage from 'use-image'; 
 import fileImgUrl from '../../assets/file.png'; */
 
