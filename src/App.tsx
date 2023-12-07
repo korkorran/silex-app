@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 import { demosDetails } from './constant';
+import Giscus from '@giscus/react';
 
 function App() {
   const location = useLocation();
@@ -19,13 +20,14 @@ function App() {
       <NavBar />
       <div className='content'>
         { location.pathname == '/' && !hasPressEnter &&
-          <div className='card'>
+          <div className='board'>
             <img src={logoUrl} className='logo-img' />
             <div>
               <a href='https://github.com/frederic-lang/awesome-konva-react-demos' target='_blank'>
                 <FaGithub />
               </a>
             </div>
+            <p>A demo app with multiple Konva boards</p>
             <div>
               <button className='btn' onClick={()=>setHasPressEnter(true)}>Press Enter</button>
             </div>
@@ -47,7 +49,29 @@ function App() {
             </div>
           </div>
         }
-        <Outlet />
+        { location.pathname.startsWith('/demos/') && 
+          <>
+            <div className='board'>
+              <Outlet />
+            </div>
+            <Giscus
+              key={location.pathname}
+              id="comments"
+              repo="frederic-lang/awesome-konva-react-demos"
+              repoId="R_kgDOKtUG1g"
+              category="Announcements"
+              categoryId="DIC_kwDOKtUG1s4Cbi04"
+              mapping="pathname"
+              term="Welcome to @giscus/react component!"
+              reactionsEnabled="1"
+              emitMetadata="0"
+              inputPosition="top"
+              theme="light"
+              lang="en"
+              loading="lazy"
+            />
+          </>
+        }
       </div>
     </>
   )

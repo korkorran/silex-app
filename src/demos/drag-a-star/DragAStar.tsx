@@ -47,7 +47,7 @@ const DragAStar = () => {
 
   return (
     <>
-    <Stage width={window.innerWidth - 300} height={window.innerHeight - 100}>
+    <Stage width={window.innerWidth - 300} height={window.innerHeight - 200}>
       <Layer>
         {stars.map((star) => (
           <Star
@@ -82,21 +82,6 @@ const DragAStar = () => {
       </Layer>
     </Stage>
     <p><b>Instructions : </b> Drag a star and see dragging effect. <a href='https://github.com/frederic-lang/awesome-konva-react-demos/blob/master/src/demos/drag-a-star/DragAStar.tsx' target='_blank'><FaGithub /></a></p>
-    <Giscus
-      id="comments"
-      repo="frederic-lang/awesome-konva-react-demos"
-      repoId="R_kgDOKtUG1g"
-      category="Announcements"
-      categoryId="DIC_kwDOKtUG1s4Cbi04"
-      mapping="pathname"
-      term="Welcome to @giscus/react component!"
-      reactionsEnabled="1"
-      emitMetadata="0"
-      inputPosition="top"
-      theme="light"
-      lang="en"
-      loading="lazy"
-    />
     </>
   );
 };

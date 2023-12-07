@@ -42,8 +42,8 @@ const PostItBoard = () => {
   return (
     <>
     <Stage
-      width={window.innerWidth - 280}
-      height={window.innerHeight - 100}
+      width={window.innerWidth - 300}
+      height={window.innerHeight - 200}
       onMouseDown={checkDeselect}
       onTouchStart={checkDeselect}
     >

@@ -8,8 +8,8 @@ import { Stage, Layer,Circle, Arrow} from 'react-konva';
 function generateTargets() {
   return [...Array(10)].map((_, i) => ({
     id: 'target-' + i.toString(),
-    x: Math.random() * (window.innerWidth-280),
-    y: Math.random() * (window.innerHeight - 100),
+    x: Math.random() * (window.innerWidth-300),
+    y: Math.random() * (window.innerHeight - 200),
     color: Util.getRandomColor(),
     radius: 20 + (Math.random() * 20)
   }));
@@ -77,7 +77,7 @@ const ConnectCirclesBoard = () => {
 
   return (
     <>
-    <Stage width={window.innerWidth - 280} height={window.innerHeight - 100}>
+    <Stage width={window.innerWidth - 300} height={window.innerHeight - 200}>
       <Layer ref={layerRef}>
         {circles.map((circle) => (
           <Circle

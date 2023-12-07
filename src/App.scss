@@ -51,22 +51,54 @@
 .content {
   margin-left: 17.5rem;
   width: calc(100% - 18rem);
+  transition: margin-left .2s;
+  padding-top: 5vh;
 
   svg {
-	text-align: center;
-	font-size: 2rem;
+    text-align: center;
+    font-size: 2rem;
   }
 
   p {
-	text-align: start;
-	font-family: 'VT323', monospace ;
-	font-size: 24px;
-	margin-left: 2rem;
+    text-align: start;
+    font-family: 'VT323', monospace ;
+    font-size: 24px;
+    margin-left: 2rem;
 
-	svg {
-		color: black;
-		font-size: 1.5rem;
-	}
+    svg {
+      color: black;
+      font-size: 1.5rem;
+    }
+  }
+
+  .board {
+    box-shadow: inset 0px 0px 10px 10px rgba(109, 109, 109, 0.541);
+    border-radius: 20px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    p { 
+      text-align: center;
+      color: #474747;
+    }
+  }
+
+  #comments {
+    display: block;
+	  width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+}
+
+body:has(#nav-toggle:checked) {
+  & .content {
+    margin-left: 10rem;
   }
 }
 
