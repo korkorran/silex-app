@@ -11,9 +11,9 @@
  - demo 'Post-it' showing a board with resizable post-its
  - demo 'Connect Circles' showing draggables circles connected with arrows
 
-## [0.0.2] - 06/12/2023
+## [0.0.2] - 07/12/2023
 
 ### Added
 
  - new demo 'Snake' showcasing a snake game.
- - instructions added at the bottom of each demo
+ - instructions and Giscus comments added at the bottom of each demo
