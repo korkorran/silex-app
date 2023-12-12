@@ -1,9 +1,12 @@
 import { Layer as LayerType } from 'konva/lib/Layer';
 import { Util } from 'konva/lib/Util';
 import { Arrow as ArrowType } from 'konva/lib/shapes/Arrow';
+import { Vector2d } from 'konva/lib/types';
 import { useEffect, useRef, useState } from 'react';
 import { FaGithub } from 'react-icons/fa';
-import { Stage, Layer,Circle, Arrow} from 'react-konva';
+import { GiAxeSword, GiAppleSeeds, GiAxeInStump } from "react-icons/gi";
+import { Stage, Layer,Circle, Arrow, Group} from 'react-konva';
+import { Html } from 'react-konva-utils';
 
 function generateTargets() {
   return [...Array(10)].map((_, i) => ({
@@ -11,11 +14,21 @@ function generateTargets() {
     x: Math.random() * (window.innerWidth-300),
     y: Math.random() * (window.innerHeight - 200),
     color: Util.getRandomColor(),
-    radius: 20 + (Math.random() * 20)
+    radius: 20 + (Math.random() * 20),
+    icon: <GiAxeSword />
   }));
 }
 
 const INITIAL_CIRCLES = generateTargets();
+
+INITIAL_CIRCLES[1].icon = <GiAppleSeeds />
+INITIAL_CIRCLES[2].icon = <GiAxeInStump />
+INITIAL_CIRCLES[3].icon = <GiAppleSeeds />
+INITIAL_CIRCLES[4].icon = <GiAxeInStump />
+INITIAL_CIRCLES[5].icon = <GiAppleSeeds />
+INITIAL_CIRCLES[6].icon = <GiAxeInStump />
+INITIAL_CIRCLES[7].icon = <GiAppleSeeds />
+
 
 function generateConnectors() {
   const number = 10;
@@ -35,7 +48,7 @@ function generateConnectors() {
   return result;
 }
 
-function getConnectorPoints(from: any, to: any) {
+function getConnectorPoints(from: Vector2d, to: Vector2d) {
   const dx = to.x -from.x;
   const dy = to.y - from.y;
   let angle = Math.atan2(-dy, dx);
@@ -70,7 +83,6 @@ const ConnectCirclesBoard = () => {
       );
       line!.points(points);
     });
-
   }
 
   useEffect(()=> { updateObjects()}, [])
@@ -79,21 +91,31 @@ const ConnectCirclesBoard = () => {
     <>
     <Stage width={window.innerWidth - 300} height={window.innerHeight - 200}>
       <Layer ref={layerRef}>
-        {circles.map((circle) => (
-          <Circle
+        {circles.map((circle) => ( 
+          <Group
             key={circle.id}
             id={circle.id}
             x={circle.x}
             y={circle.y}
-            radius={circle.radius}
-            fill={circle.color}
-            opacity={0.8}
-            draggable
-            shadowColor="black"
-            shadowBlur={10}
-            shadowOpacity={0.6}
             onDragMove={updateObjects}
-          />
+            draggable
+            >
+            <Circle
+              radius={circle.radius}
+              fill={circle.color}
+              opacity={0.8}
+              shadowColor="black"
+              shadowBlur={10}
+              shadowOpacity={0.6}
+              />
+            <Html
+              divProps={{style:{
+                "pointerEvents":"none",
+                "translate" : "-15px -15px"
+                }}}>
+              {circle.icon}
+            </Html>
+          </Group>
         ))}
         {connectors.map(connector=> (
           <Arrow
@@ -101,7 +123,7 @@ const ConnectCirclesBoard = () => {
             stroke='black'
             id={connector.id}
             fill='black'
-            points={getConnectorPoints(connector.from, connector.to)} />
+            points={[]} />
         ))}
       </Layer>
     </Stage>
