@@ -2,7 +2,7 @@ import ConnectCirclesBoard from "./demos/connect-circles/ConnectCirclesBoard";
 import DragAStar from "./demos/drag-a-star/DragAStar";
 import PostItBoard from "./demos/post-it/PostItBoard";
 import WheelOfFortune from "./demos/wheel-of-fortune/WheelOfFortune";
-import { FaPaste, FaStar } from "react-icons/fa";
+import { FaPaste, FaStar, FaCube } from "react-icons/fa";
 import { RxColorWheel } from "react-icons/rx";
 import { SlLink } from "react-icons/sl";
 import { GiSnakeTongue } from "react-icons/gi";
@@ -12,6 +12,8 @@ import postItUrl from './assets/screenshot-post-it.png';
 import connectCirclesUrl from './assets/screenshot-connect-circles.png';
 import snakeUrl from './assets/screenshot-snake.png';
 import SnakeGame from "./demos/snake/SnakeGame";
+import ThreeDcubesUrl from './assets/screenshot-3Dcubes.png';
+import ThreeDcubes from "./demos/3Dcubes/3Dcubes";
 
 export const demosDetails = [
     {
@@ -48,5 +50,12 @@ export const demosDetails = [
       title: 'Snake',
       icon: <GiSnakeTongue />,
       screenshotUrl: snakeUrl
+    },
+    {
+      path: '/demos/3Dcubes',
+      element: <ThreeDcubes/>,
+      title: '3D Cubes',
+      icon: <FaCube />,
+      screenshotUrl: ThreeDcubesUrl
     }
   ]
