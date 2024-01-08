@@ -2,7 +2,7 @@ import ConnectCirclesBoard from "./demos/connect-circles/ConnectCirclesBoard";
 import DragAStar from "./demos/drag-a-star/DragAStar";
 import PostItBoard from "./demos/post-it/PostItBoard";
 import WheelOfFortune from "./demos/wheel-of-fortune/WheelOfFortune";
-import { FaPaste, FaStar, FaCube } from "react-icons/fa";
+import { FaPaste, FaStar, FaCube, FaGithub } from "react-icons/fa";
 import { RxColorWheel } from "react-icons/rx";
 import { SlLink } from "react-icons/sl";
 import { GiSnakeTongue } from "react-icons/gi";
@@ -14,6 +14,8 @@ import snakeUrl from './assets/screenshot-snake.png';
 import SnakeGame from "./demos/snake/SnakeGame";
 import ThreeDcubesUrl from './assets/screenshot-3Dcubes.png';
 import ThreeDcubes from "./demos/3Dcubes/3Dcubes";
+import githubSearchUrl from './assets/screenshot-github-search.png';
+import GithubSearch from "./demos/github-search/GithubSearch";
 
 export const demosDetails = [
     {
@@ -57,5 +59,12 @@ export const demosDetails = [
       title: '3D Cubes',
       icon: <FaCube />,
       screenshotUrl: ThreeDcubesUrl
+    },
+    {
+      path: '/demos/github-search',
+      element: <GithubSearch />,
+      title: 'Github Search',
+      icon: <FaGithub />,
+      screenshotUrl: githubSearchUrl
     }
   ]

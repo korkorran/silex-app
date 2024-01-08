@@ -74,7 +74,7 @@
   .board {
     box-shadow: inset 0px 0px 10px 10px rgba(109, 109, 109, 0.541);
     border-radius: 20px;
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
