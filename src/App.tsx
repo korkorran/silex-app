@@ -54,7 +54,7 @@ function App() {
             <div className='board'>
               <Outlet />
             </div>
-{/*             <Giscus
+            <Giscus
               key={location.pathname}
               id="comments"
               repo="frederic-lang/awesome-konva-react-demos"
@@ -69,7 +69,7 @@ function App() {
               theme="light"
               lang="en"
               loading="lazy"
-            /> */}
+            />
           </>
         }
       </div>
