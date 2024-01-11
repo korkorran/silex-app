@@ -12,6 +12,7 @@
   "dependencies": {
     "@giscus/react": "^2.3.0",
     "@octokit/rest": "^20.0.2",
+    "@react-three/drei": "^9.93.0",
     "@react-three/fiber": "^8.15.13",
     "@types/three": "^0.160.0",
     "konva": "^9.2.3",
@@ -22,7 +23,8 @@
     "react-konva-utils": "^1.0.5",
     "react-router-dom": "^6.19.0",
     "three": "^0.160.0",
-    "use-image": "^1.1.1"
+    "use-image": "^1.1.1",
+    "valtio": "^1.13.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

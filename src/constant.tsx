@@ -2,10 +2,11 @@ import ConnectCirclesBoard from "./demos/connect-circles/ConnectCirclesBoard";
 import DragAStar from "./demos/drag-a-star/DragAStar";
 import PostItBoard from "./demos/post-it/PostItBoard";
 import WheelOfFortune from "./demos/wheel-of-fortune/WheelOfFortune";
-import { FaPaste, FaStar, FaCube, FaGithub } from "react-icons/fa";
+import { FaPaste, FaStar, FaCube, FaGithub, FaCubes } from "react-icons/fa";
 import { RxColorWheel } from "react-icons/rx";
 import { SlLink } from "react-icons/sl";
 import { GiSnakeTongue } from "react-icons/gi";
+import { LuRotate3D } from "react-icons/lu";
 import dragAStarUrl from './assets/screenshot-drag-a-star.png';
 import wheelOfFortuneUrl from './assets/screenshot-wheel-of-fortune.png';
 import postItUrl from './assets/screenshot-post-it.png';
@@ -16,6 +17,9 @@ import ThreeDcubesUrl from './assets/screenshot-3Dcubes.png';
 import ThreeDcubes from "./demos/3Dcubes/3Dcubes";
 import githubSearchUrl from './assets/screenshot-github-search.png';
 import GithubSearch from "./demos/github-search/GithubSearch";
+import ThreeDpuzzle from "./demos/3Dpuzzle/3Dpuzzle";
+import ThreeDobjects from "./demos/3Dobjects/3Dobjects";
+
 
 export const demosDetails = [
     {
@@ -58,6 +62,20 @@ export const demosDetails = [
       element: <ThreeDcubes/>,
       title: '3D Cubes',
       icon: <FaCube />,
+      screenshotUrl: ThreeDcubesUrl
+    },
+    {
+      path: '/demos/3Dobjects',
+      element: <ThreeDobjects/>,
+      title: '3D Objects',
+      icon: <LuRotate3D />,
+      screenshotUrl: ThreeDcubesUrl
+    },
+    {
+      path: '/demos/3Dpuzzle',
+      element: <ThreeDpuzzle/>,
+      title: '3D Puzzle',
+      icon: <FaCubes />,
       screenshotUrl: ThreeDcubesUrl
     },
     {
