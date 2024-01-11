@@ -3,10 +3,8 @@ import { Box } from './Box';
 import { Canvas } from '@react-three/fiber';
 import "./3Dpuzzle.scss"
 import { OrbitControls } from "@react-three/drei";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useChainStore } from "./chainStore";
-
-type Chain = number[][]
 
 const ThreeDpuzzle = () => {
   const {chain, setChain } = useChainStore((state:any)=> ({chain: state.chain, setChain: state.set}))
@@ -30,7 +28,7 @@ const ThreeDpuzzle = () => {
           <ambientLight intensity={Math.PI / 2} />
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
           <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-          { chain && chain?.map((coordinates, i)=> (
+          { chain && chain?.map((coordinates : number[], i:number)=> (
             <Box position={coordinates} i={i}  />
           ))}
           <OrbitControls />
