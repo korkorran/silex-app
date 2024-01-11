@@ -9,7 +9,7 @@ import { useChainStore } from "./chainStore";
 const ThreeDpuzzle = () => {
   const {chain, setChain } = useChainStore((state:any)=> ({chain: state.chain, setChain: state.set}))
   useEffect(()=> {
-    fetch('http://192.168.1.20:5000/etat_cube', {
+    fetch('http://localhost:5000/etat_cube', {
       method: 'GET',
       //mode: 'no-cors',
       headers: {

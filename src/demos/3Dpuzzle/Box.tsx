@@ -8,7 +8,7 @@ export function Box(props:any) {
   const {setChain } = useChainStore((state:any)=> ({ setChain: state.set}))
 
   const onClick = () => {
-    fetch('http://192.168.1.31:5000/rotate_cube', {
+    fetch('http://localhost:5000/rotate_cube', {
       method: 'POST',
       //mode: 'no-cors',
       headers: {

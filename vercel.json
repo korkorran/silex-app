@@ -4,9 +4,5 @@
       "source": "/(.*)",
       "destination": "/"
     }
-  ],
-  "routes": {
-    "source" : "/api/*",
-    "destination": "/api"
-  }
+  ]
 }
