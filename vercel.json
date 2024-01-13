@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/api"
+      "destination": "/api/api_cube.py"
     },
     {
       "source": "/:path((?!api/).*)",
