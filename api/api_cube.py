@@ -15,7 +15,7 @@ cube_chaine = [3,1,2,1,1,3,1,2,1,2,1,2,1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,2,3,1,1,1,3
 cube = cube64(cube_chaine)
 coord_cube = cube.get_coordonnees()
 
-@app.route('/etat_cube', methods=['GET'])
+@app.route('/api/etat_cube', methods=['GET'])
 @cross_origin()
 def get_etat_cube():
     reponse = jsonify({"coordonnees": [[int(c) for c in coord] for coord in coord_cube]})
@@ -23,7 +23,7 @@ def get_etat_cube():
     # reponse.headers["Access-Control-Allow-Credentials"] = True
     return reponse
 
-@app.route('/rotate_cube', methods=['POST'])
+@app.route('/api/rotate_cube', methods=['POST'])
 @cross_origin()
 def rotate_cube():
     donnees = request.data
@@ -34,7 +34,8 @@ def rotate_cube():
     coord_cube = cube.get_coordonnees()
     return jsonify({"coordonnees": [[int(c) for c in coord] for coord in coord_cube]})
 
-@app.route('/')
+@app.route('/api')
+@cross_origin()
 def index():
     routes = []
     for rule in app.url_map.iter_rules():
