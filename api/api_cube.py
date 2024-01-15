@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, jsonify
-from cube64_2 import *
+from api.cube64_2 import *
 from flask_cors import CORS, cross_origin
 from flask import request
 import json
