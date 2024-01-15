@@ -1,6 +1,7 @@
 # usr/bin/env python3
 # -*- coding: utf-8 -*-
-
+import sys
+sys.path.append( '..' )
 from flask import Flask, jsonify
 from api.cube64_2 import *
 from flask_cors import CORS, cross_origin
