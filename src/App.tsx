@@ -1,7 +1,7 @@
 import './App.scss'
 import NavBar from './NavBar'
 import { Outlet, useLocation } from 'react-router-dom'
-import logoUrl from './assets/Konva-react_demos.png';
+import logoUrl from './assets/Silex-demos.png';
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
@@ -23,11 +23,11 @@ function App() {
           <div className='board'>
             <img src={logoUrl} className='logo-img' />
             <div>
-              <a href='https://github.com/frederic-lang/awesome-konva-react-demos' target='_blank'>
+              <a href='https://github.com/silex-camp/silex-demos' target='_blank'>
                 <FaGithub />
               </a>
             </div>
-            <p>A demo app with multiple Konva boards</p>
+            <p>A bootstrap app for Silex</p>
             <div>
               <button className='btn' onClick={()=>setHasPressEnter(true)}>Press Enter</button>
             </div>
@@ -57,7 +57,7 @@ function App() {
             <Giscus
               key={location.pathname}
               id="comments"
-              repo="frederic-lang/awesome-konva-react-demos"
+              repo="silex-camp/silex-demos"
               repoId="R_kgDOKtUG1g"
               category="Announcements"
               categoryId="DIC_kwDOKtUG1s4Cbi04"
