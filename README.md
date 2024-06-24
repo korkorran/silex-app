@@ -1,8 +1,8 @@
 <p align="center">
-  <img width="500" height="400" style="object-fit: cover;" src="src/assets/Silex-demos.png">
+  <img width="500" height="400" style="object-fit: cover;" src="src/assets/Silex-Start.png">
 </p>
 
-A vite app with multiple Canvas Board showcasing Konva with React, written in typescript. The app intent is to get familiarized with Konva-react.
+A vite app with several boards showcasing multiple libraries with React, written in typescript. The app intent is to get familiarized with React.
 
 ## Current boards:
 
@@ -11,6 +11,7 @@ A vite app with multiple Canvas Board showcasing Konva with React, written in ty
 - Post-it : a board with post-it that you can resize and rotate. Adapted from https://konvajs.org/docs/react/Transformer.html
 - Connect circles : a collection of circles connected with arrows. Adapted from https://konvajs.org/docs/sandbox/Connected_Objects.html
 - Snake : a snake game where you want to eat fruits
+- ... and many other boards
 
 ## Contribute
 
