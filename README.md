@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="500" height="400" style="object-fit: cover;" src="src/assets/Silex-Start.png">
+  <img style="object-fit: cover;" src="src/assets/Silex-Start.png">
 </p>
 
 A vite app with several boards showcasing multiple libraries with React, written in typescript. The app intent is to get familiarized with React.
