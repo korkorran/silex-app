@@ -22,7 +22,7 @@ function NavBar() {
             <div className="nav-header">
                 { toggled &&
                 <div className="nav-title" onClick={() => navigate("/")}>
-                    <span className="highlight">Baby </span>
+                    <span className="highlight">Silex </span>
                     App
                 </div>}
                 <label htmlFor="nav-toggle" onClick={toggle}>

@@ -23,7 +23,7 @@ function App() {
           <div className='board'>
             <img width="700" src={logoUrl} className='logo-img' />
             <div>
-              <a href='https://github.com/silex-camp/silex-demos' target='_blank'>
+              <a href='https://github.com/korkorran/silex-app' target='_blank'>
                 <FaGithub />
               </a>
             </div>
@@ -57,7 +57,7 @@ function App() {
             <Giscus
               key={location.pathname}
               id="comments"
-              repo="silex-camp/silex-demos"
+              repo="korkorran/silex-app"
               repoId="R_kgDOKtUG1g"
               category="Announcements"
               categoryId="DIC_kwDOKtUG1s4Cbi04"
