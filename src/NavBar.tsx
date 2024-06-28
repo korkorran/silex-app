@@ -22,8 +22,8 @@ function NavBar() {
             <div className="nav-header">
                 { toggled &&
                 <div className="nav-title" onClick={() => navigate("/")}>
-                    <span className="highlight">Silex </span> <br/>
-                    Demos 
+                    <span className="highlight">Baby </span>
+                    App
                 </div>}
                 <label htmlFor="nav-toggle" onClick={toggle}>
                     { toggled ? <FaChevronLeft /> : <FaBars />}

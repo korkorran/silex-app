@@ -1,7 +1,7 @@
 import './App.scss'
 import NavBar from './NavBar'
 import { Outlet, useLocation } from 'react-router-dom'
-import logoUrl from './assets/Silex-demos-hunter-bg.png';
+import logoUrl from './assets/baby.png';
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
@@ -21,13 +21,13 @@ function App() {
       <div className='content'>
         { location.pathname == '/' && !hasPressEnter &&
           <div className='board'>
-            <img src={logoUrl} className='logo-img' />
+            <img width="700" src={logoUrl} className='logo-img' />
             <div>
               <a href='https://github.com/silex-camp/silex-demos' target='_blank'>
                 <FaGithub />
               </a>
             </div>
-            <p>A bootstrap app for Silex</p>
+            <p>A collection of boards with user interactions</p>
             <div>
               <button className='btn' onClick={()=>setHasPressEnter(true)}>Press Enter</button>
             </div>

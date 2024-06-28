@@ -18,7 +18,9 @@ import ThreeDcubes from "./demos/3Dcubes/3Dcubes";
 import githubSearchUrl from './assets/screenshot-github-search.png';
 import GithubSearch from "./demos/github-search/GithubSearch";
 import ThreeDpuzzle from "./demos/3Dpuzzle/3Dpuzzle";
+import ThreeDpuzzleUrl from "./assets/screenshot-3D-puzzle.png";
 import ThreeDobjects from "./demos/3Dobjects/3Dobjects";
+import ThreeDobjectsUrl from "./assets/screenshot-3D-objects.png"
 
 
 export const demosDetails = [
@@ -69,14 +71,14 @@ export const demosDetails = [
       element: <ThreeDobjects/>,
       title: '3D Objects',
       icon: <LuRotate3D />,
-      screenshotUrl: ThreeDcubesUrl
+      screenshotUrl: ThreeDobjectsUrl
     },
     {
       path: '/demos/3Dpuzzle',
       element: <ThreeDpuzzle/>,
       title: '3D Puzzle',
       icon: <FaCubes />,
-      screenshotUrl: ThreeDcubesUrl
+      screenshotUrl: ThreeDpuzzleUrl
     },
     {
       path: '/demos/github-search',

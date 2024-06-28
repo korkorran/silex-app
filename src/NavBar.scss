@@ -183,7 +183,7 @@
     transition: min-width .2s;
   }
 
-  @for $i from 1 through 8 {
+  @for $i from 1 through 9 {
     &:nth-of-type(#{$i}):hover {
       color: var(--navbar-dark-primary);
 
