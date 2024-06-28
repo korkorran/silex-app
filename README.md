@@ -1,5 +1,5 @@
 <p align="center">
-  <img style="object-fit: cover;" src="src/assets/Baby-App.png">
+  <img style="object-fit: cover;" src="src/assets/Silex-App.png">
 </p>
 
 A demo app with several boards showcasing multiple libraries with React, written in typescript. The app intent is to get familiarized with React.
