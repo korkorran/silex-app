@@ -1,7 +1,7 @@
 import './App.scss'
 import NavBar from './NavBar'
 import { Outlet, useLocation } from 'react-router-dom'
-import logoUrl from './assets/baby.png';
+import logoUrl from './assets/silex-app-hero.png';
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
